@@ -1,0 +1,29 @@
+plugins{
+    id 'java'
+    id 'war'
+    id 'org.gretty' version '2.2.0' 
+	id 'com.bmuschko.tomcat'
+}
+repositories{
+    jcenter()
+}
+dependencies{
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'  
+    compile 'org.glassfish:javax.json:1.0.2' 
+}
+
+dependencies {
+    def tomcatVersion = '7.0.59'
+    
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+           "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+buildscript {
+	dependencies {
+		classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+	}
+}
+
+
