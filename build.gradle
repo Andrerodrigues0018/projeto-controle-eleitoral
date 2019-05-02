@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-plugins{
-    id 'java'
-    id 'war'
-    id 'org.gretty' version '2.2.0' 
-}
-repositories{
-    jcenter()
-}
-dependencies{
-    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'  
-    compile 'org.glassfish:javax.json:1.0.2' 
-}
-=======
+
 plugins {
     id 'java'
     id 'war'
@@ -76,4 +63,3 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
 
 }
->>>>>>> update
