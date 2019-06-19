@@ -2,12 +2,26 @@
 
 /* VOTAR */
 
-form[name="entrar_rm"] input[type="text"] {
+form[name="entrar_rm"] input[type="text"] , form[name="entrar_rm"] input[type="password"], .button-option  {
     padding: 10px;
     border: #aaaaaa solid 1px;
     border-radius: 5px;
 }
 
+.button-option {
+    margin-left: 20px;
+    color: white;
+}
+
+.bo-1{
+    background: #2ECC71;
+}
+.bo-2{
+    background: #2980B9;
+}
+.bo-3{
+    background: #2C3E50;
+}
 form[name="entrar_rm"] input[type="submit"] {
     padding: 10px;
     border: #626262 solid 2px;
@@ -41,12 +55,17 @@ section.urna_box {
 figure.candi-list {
     float: left;
     width: 200px;
+    cursor: pointer;
     text-align: center;
     border: #484848 solid 5px;
     text-indent: 0;
     display: inline-block;
     margin: 0 0 10px 10px;
     transition: .2s ease-in;
+}
+figure.candi-list label {
+    
+    cursor: pointer;
 }
 
 figure.candi-list:hover {
@@ -55,6 +74,7 @@ figure.candi-list:hover {
 
 figure.candi-list img {
     width: 100%;
+    height: 150px;
 }
 
 figure.candi-list figcaption {
@@ -113,12 +133,13 @@ section.generic-se-ma p {
 div.eleitor-foto {
     background-image: url(../_img/jom.jpg);
     background-size: 100%;
+    
     font-size: 0;
     border: #8d8d8d solid 3px;
     float: right;
     width: 200px;
-    height: 200px;
-    margin-top: -200px;
+    height: 110px;
+    margin-top: -140px;
 }
 
 div.codigo-barra {
@@ -130,6 +151,7 @@ div.codigo-barra {
     width: 200px;
     height: 100px;
     margin-top: 20px;
+    margin-left: 15%;
 }
 
 figure.etec-marca img{

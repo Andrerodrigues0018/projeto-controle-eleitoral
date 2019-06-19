@@ -4,76 +4,27 @@
      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
     <!-- ************************************************************************************************************* -->
-
-    <persistence-unit name="usuario">
-
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>model.Usuario</class>
-
-        <properties>
-            <property name="javax.persistence.jdbc.driver"
-                      value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/blogspot?serverTimezone=UTC" />
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="159248" />
-
-            <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-        </properties>
-    </persistence-unit>
-
-
-<!-- ************************************************************************************************************* -->
-
-
-    <persistence-unit name="topico">
-
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>model.Topico</class>
-
-        <properties>
-            <property name="javax.persistence.jdbc.driver"
-                      value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/blogspot?serverTimezone=UTC" />
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="159248" />
-
-            <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-        </properties>
-    </persistence-unit>
-
-    <!-- ************************************************************************************************************* -->
-
-
-    <persistence-unit name="comentario">
-
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>model.Comentario</class>
-
-        <properties>
-            <property name="javax.persistence.jdbc.driver"
-                      value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3306/blogspot?serverTimezone=UTC" />
-            <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="159248" />
-
-            <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-        </properties>
-    </persistence-unit>
-
+<persistence-unit name="persistencia_simples">
+    <description> Persistencia de dados
+                  com JPA - Hibernate 5</description>
+    <!-- Provedor da implementação das especificações de interface do JPA -->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> 
+    <class>model.Eleitor</class> 
+    <class>model.Voto</class>
+    <class>model.Candidata</class>
+    
+    <class>model.Person</class>
+    <class>model.DeptGroup</class>
+    
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Projeto6" />
+      <property name="javax.persistence.jdbc.user" value="adminp6" />
+      <property name="javax.persistence.jdbc.password" value="adminp6" />
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.hbm2ddl.auto" value="update" />       
+    </properties>
+  </persistence-unit>
+</persistence>
 <!-- ************************************************************************************************************* -->
 </persistence>
