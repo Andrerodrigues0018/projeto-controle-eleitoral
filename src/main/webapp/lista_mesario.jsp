@@ -95,15 +95,16 @@ and open the template in the editor.
                      <td> André </td> <td> 1231231212 </td> <td> 12 </td> <td><a href="">Habilitar</a></td>
 
                 </tr>
-                <tr>
-                     <td> André </td> <td> 1231231212 </td> <td> 12 </td> <td><a href="">Desabilitar</a></td>
-
-                </tr>
-                <tr>
-                     <td> André </td> <td> 1231231212 </td> <td> 12 </td> <td><a href="">Habilitar</a></td>
-
-                </tr>
+                <c:forEach items="${lv}" var="lv">
+                    <tr>
+                        <td class="tdCenter">${lv.classificacao}</td>
+                        <td class="tdCenter">${lv.qtdeVotos}</td>
+                        <td class="tdProfissao">${lv.cFull.profissao}</td>
+                    </tr>
+                </c:forEach>
             </table>
+
+
             
         </article>
         

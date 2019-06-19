@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import model.Relatorio;
 
 public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -11,10 +12,20 @@ public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_forEach_var_items.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -42,6 +53,8 @@ public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
+      out.write("\n");
+      out.write("    \n");
       out.write("\n");
       out.write("<!--\n");
       out.write("To change this license header, choose License Headers in Project Properties.\n");
@@ -121,7 +134,9 @@ public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        \n");
       out.write("        <article class=\"generic-se-ma\">\n");
       out.write("            \n");
-      out.write("            <h2>Chefe de Sessao -  Relatorio</h2> <br>\n");
+      out.write("            <h2>Mesário ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mesario_nome}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" -  Relatorio</h2> <br>\n");
       out.write("            \n");
       out.write("            <p>Abaixa estão as relações dos votos. <br>\n");
       out.write("            \n");
@@ -133,18 +148,11 @@ public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <tr style=\"font-weight: bolder;\">\n");
       out.write("                    <td> Candidato </td> <td> Qtd. Votos </td> <td> % </td> <td>Opção</td>\n");
       out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                     <td> Candidato 1 </td> <td> 1313 </td> <td> 12% </td> <td><a href=\"\">Listar votos</a></td>\n");
+      out.write("               \n");
+      out.write("                ");
+      if (_jspx_meth_c_forEach_0(_jspx_page_context))
+        return;
       out.write("\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                     <td> Candidato 2 </td> <td> 3123 </td> <td> 12% </td> <td><a href=\"\">Listar votos</a></td>\n");
-      out.write("\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>\n");
-      out.write("                     <td> Candidato 3 </td> <td> 1245 </td> <td> 12% </td> <td><a href=\"\">Listar votos</a></td>\n");
-      out.write("\n");
-      out.write("                </tr>\n");
       out.write("            </table>\n");
       out.write("\n");
       out.write("                <a  class=\"button-option bo-1\" style=\"text-align: center;width: auto;\"> Imprimir </a>\n");
@@ -178,5 +186,53 @@ public final class relatorio_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_forEach_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_0.setParent(null);
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lv}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_forEach_0.setVar("lv");
+    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
+      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\n");
+          out.write("                    <tr>\n");
+          out.write("                        <td >");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lv.classificacao}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                        <td >");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lv.qtdeVotos}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</td>\n");
+          out.write("                        <td >");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${ ((lv.qtdeVotos * 100 ) / qtdTotal).intValue() }", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("% </td>\n");
+          out.write("                        <td ><a href=\"\">Listar votos</a></td>\n");
+          out.write("                    </tr>\n");
+          out.write("                ");
+          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_0.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
   }
 }

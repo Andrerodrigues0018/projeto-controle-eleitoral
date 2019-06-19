@@ -22,18 +22,19 @@ public class DAO_Voto {
 		emf.close();
 	}
 
-	// public List<Object[]> apurarVotos(){
-		
-	// 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencia_simples");
-	// 	EntityManager em = emf.createEntityManager();
-		
-	// 	String jpql = "select count(v) as voto_qtd, v.voto from voto v group by v.voto ORDER BY COUNT(v) DESC";
 
-	// 	@SuppressWarnings("unchecked")
-	// 	List<Object[]> votos = em.createQuery(jpql).getResultList();
+	public List<Object[]> listarVotos(){
 		
-	// 	return votos;		
-	// }
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistencia_simples");
+		EntityManager em = emf.createEntityManager();
+		
+		String jpql = "select count(v) as voto_qtd, v.candidato_id from voto v group by v.candidato_id ORDER BY COUNT(v) DESC";
+
+		@SuppressWarnings("unchecked")
+		List<Object[]> votos = em.createQuery(jpql).getResultList();
+		
+		return votos;		
+	}
 
 	public Integer validarVoto(Long eleitor_id) throws Exception {
 		

@@ -123,9 +123,7 @@ public final class login_005fmesario_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            \n");
       out.write("            <h2>Mesario:</h2> <br>\n");
       out.write("            \n");
-      out.write("            <p>Para habilitar o voto de <b>");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${nome}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</b>, por favor faça o Login com o seus dados. <br>\n");
+      out.write("            <p>Para entrar, por favor faça o Login com o seus dados. <br>\n");
       out.write("            \n");
       out.write("            <br>\n");
       out.write("            \n");

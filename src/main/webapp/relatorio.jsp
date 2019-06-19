@@ -1,6 +1,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="model.Relatorio"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -79,7 +81,7 @@ and open the template in the editor.
         
         <article class="generic-se-ma">
             
-            <h2>Chefe de Sessao -  Relatorio</h2> <br>
+            <h2>Mesário ${mesario_nome} -  Relatorio</h2> <br>
             
             <p>Abaixa estão as relações dos votos. <br>
             
@@ -91,18 +93,15 @@ and open the template in the editor.
                 <tr style="font-weight: bolder;">
                     <td> Candidato </td> <td> Qtd. Votos </td> <td> % </td> <td>Opção</td>
                 </tr>
-                <tr>
-                     <td> Candidato 1 </td> <td> 1313 </td> <td> 12% </td> <td><a href="">Listar votos</a></td>
-
-                </tr>
-                <tr>
-                     <td> Candidato 2 </td> <td> 3123 </td> <td> 12% </td> <td><a href="">Listar votos</a></td>
-
-                </tr>
-                <tr>
-                     <td> Candidato 3 </td> <td> 1245 </td> <td> 12% </td> <td><a href="">Listar votos</a></td>
-
-                </tr>
+               
+                <c:forEach items="${lv}" var="lv">
+                    <tr>
+                        <td >${lv.classificacao}</td>
+                        <td >${lv.qtdeVotos}</td>
+                        <td >${ ((lv.qtdeVotos * 100 ) / qtdTotal).intValue() }% </td>
+                        <td ><a href="">Listar votos</a></td>
+                    </tr>
+                </c:forEach>
             </table>
 
                 <a  class="button-option bo-1" style="text-align: center;width: auto;"> Imprimir </a>

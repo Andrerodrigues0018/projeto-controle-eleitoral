@@ -81,7 +81,7 @@ and open the template in the editor.
             
             <h2>Mesario:</h2> <br>
             
-            <p>Para habilitar o voto de <b>${nome}</b>, por favor faça o Login com o seus dados. <br>
+            <p>Para entrar, por favor faça o Login com o seus dados. <br>
             
             <br>
             
